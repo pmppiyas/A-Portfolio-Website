@@ -5,11 +5,12 @@
   justify-content: center;
   gap: 80px;
   margin: 20px;
-  border: 2px solid wheat;
+  padding: 20px; /* Added padding for better spacing on mobile */
 }
 
 .work-title {
   position: relative;
+  text-align: center;
 }
 
 .work-title h1 {
@@ -27,20 +28,23 @@
 
 .mywork-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 40px;
+  width: 100%;
+  justify-items: center;
 }
 
 .mywork-container img {
   box-sizing: border-box;
-  width: 419px;
-  height: 280px;
+  width: 100%;
+  height: auto;
+  max-width: 419px;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .mywork-container img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   border: 4px solid #ff00ff;
   border-radius: 10px;
 }
@@ -56,9 +60,50 @@
   transition: 0.5s;
   cursor: pointer;
   margin-bottom: 80px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mywork-showmore:hover {
   gap: 30px;
   transition: 0.3s;
+}
+
+/* Responsiveness for Mobile Devices */
+@media (max-width: 768px) {
+  .work-title h1 {
+    font-size: 50px;
+  }
+
+  .mywork-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Stacks images vertically on small screens */
+    gap: 20px;
+  }
+
+  .mywork-showmore {
+    font-size: 18px;
+    padding: 15px;
+    width: 180px; /* Adjust width for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .work-title h1 {
+    font-size: 40px; /* Even smaller font size for smaller screens */
+  }
+
+  .mywork-container {
+    grid-template-columns: 1fr; /* Stack images in a single column */
+    gap: 15px;
+  }
+
+  .mywork-showmore {
+    font-size: 16px;
+    padding: 12px;
+    width: 150px;
+  }
 }

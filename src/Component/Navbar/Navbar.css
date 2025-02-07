@@ -1,29 +1,80 @@
+/* General Navbar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
   margin: 20px;
-  border: 2px solid wheat;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
+/* Logo Styling */
+.logo {
+  width: 60px;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
 .nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 60px;
-  font-size: 20px;
+  gap: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Connect Button */
 .nav-connect {
-  padding: 20px 40px;
-  border-radius: 20px 40px;
+  padding: 12px 25px;
   border-radius: 50px;
   background: linear-gradient(276deg, #da7c25 0.37%, #b923e1 102.06%);
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
   transition: 0.2s ease-in;
 }
 
 .nav-connect:hover {
   transform: scale(1.05);
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+
+    right: 0;
+    background-color: rgba(226, 188, 188, 0);
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    gap: 20px;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .menu-icon {
+    display: flex;
+  }
 }
